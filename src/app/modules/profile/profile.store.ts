@@ -3,7 +3,7 @@ import { StoreService } from 'src/app/core/store.service';
 import { ProfileState } from './profile.state';
 
 @Injectable({ providedIn: 'root' })
-export class LiveStore extends StoreService<ProfileState> {
+export class ProfileStore extends StoreService<ProfileState> {
     constructor() {
         super(new ProfileState());
     }
