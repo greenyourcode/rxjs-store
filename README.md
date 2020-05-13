@@ -17,3 +17,9 @@ En complément des informations de settings, afficher un formulaire en vue de mo
 Le formulaire contiendra des informations pré-saisies comme une modification classique. 
 Utiliser un Reactive form pour réaliser cet exercice. 
 
+--------------------------
+
+3/ Validation du formulaire
+Ajouter un bouton de validation. 
+Au clic, on souhaite que les informations saisies soient mises à jour dans le modèle. 
+Les nouvelles informations doivent être répercutées dans la vue. 

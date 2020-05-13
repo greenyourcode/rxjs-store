@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  form: FormGroup;
 
   data = {
     name: 'toto',
@@ -16,8 +18,11 @@ export class ProfileComponent implements OnInit {
     }
   };
 
-  constructor() { }
+  constructor(public fb: FormBuilder) { }
 
   ngOnInit() {
+    if (this.form === undefined) {
+      this.form = this.fb.group({});
+    }
   }
 }

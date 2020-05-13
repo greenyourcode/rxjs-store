@@ -1,5 +1,11 @@
 <h4>Settings :</h4>
 <div class="profile-container">
+    <div [formGroup]="form">
+        <label>profil public :</label>
+        <input formControlName="privateProfile" /><br />
+        <label>couleur du thème :</label>
+        <input formControlName="themeColor" /><br />
+    </div>
     <div>Profil privé : {{initialValue.privateProfile}}</div>
     <div>Couleur du thème : {{initialValue.themeColor}}</div>
 </div>
