@@ -32,8 +32,7 @@ Pour ce faire, designer le state, l'écrire et initialiser le store.
 
 --------------------------
 
-5/ Liaison entre le formulaire existant et le store
-On met en place la mécanique qui permet de rattacher le store au formulaire. 
-Au terme de cette étape, on sera capable d'afficher la valeur courante qui est dans le store. 
-
---------------------------
+5/ Détection de changement sur le formulaire
+On souhaite initier une détection de changement sur chaque onKey des élements du formulaire.
+Via un console log, afficher chaque nouvelle valeur du formulaire. 
+Remarque : un bug devra être résolu pour atteindre cette étape.
