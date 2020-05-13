@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { ProfileStore } from './profile.store';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +19,8 @@ export class ProfileComponent implements OnInit {
     }
   };
 
-  constructor(public fb: FormBuilder) { }
+  constructor(
+    public fb: FormBuilder) { }
 
   ngOnInit() {
     if (this.form === undefined) {
