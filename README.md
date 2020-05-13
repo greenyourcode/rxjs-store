@@ -50,8 +50,8 @@ Suite au clic sur un bouton d'action, on souhaite charger un profil.
 Concrétement, les données du formulaire devront être modifiées au même titre que le store. 
 
 --------------------------
-ENDING : 
 
-10/ Trouver les bugs s'il y a et refactactoriser !
+8/ Bug
+Pourquoi le themeColor initialisé à green dans le state n'est pas pris en compte à l'initialisation de l'application ? 
 
-11/ Enjoy
+--------------------------

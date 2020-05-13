@@ -6,5 +6,5 @@ export class ProfileState {
 
 export class ProfileSettingsState {
   privateProfile: string;
-  themeColor: string;
+  themeColor = 'green';
 }

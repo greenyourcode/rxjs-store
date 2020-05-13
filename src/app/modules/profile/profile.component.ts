@@ -1,6 +1,5 @@
 import { ProfileSettingsState } from './profile.state';
-import { StoreService } from './../../core/store.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ProfileStore } from './profile.store';
 
@@ -11,14 +10,9 @@ import { ProfileStore } from './profile.store';
 })
 export class ProfileComponent implements OnInit {
   form: FormGroup;
-
-  data = {
+  mock = {
     name: 'toto',
-    id: '1',
-    settings: {
-      privateProfile: false,
-      themeColor: 'blue'
-    }
+    id: '1'
   };
 
   constructor(
