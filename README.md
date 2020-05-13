@@ -31,3 +31,9 @@ On souhaite désormais conserver les informations lors du passage d'un module à
 Pour ce faire, designer le state, l'écrire et initialiser le store. 
 
 --------------------------
+
+5/ Liaison entre le formulaire existant et le store
+On met en place la mécanique qui permet de rattacher le store au formulaire. 
+Au terme de cette étape, on sera capable d'afficher la valeur courante qui est dans le store. 
+
+--------------------------
