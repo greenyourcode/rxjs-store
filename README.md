@@ -53,6 +53,7 @@ Concrétement, les données du formulaire devront être modifiées au même titr
 
 8/ Bug
 Pourquoi le themeColor initialisé à green dans le state n'est pas pris en compte à l'initialisation de l'application ? 
+MASTER *******************
 
 --------------------------
 

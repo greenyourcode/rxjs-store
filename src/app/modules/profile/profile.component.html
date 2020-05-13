@@ -2,8 +2,8 @@
 <div>ID : {{mock.id}}</div>
 <div>Nom : {{mock.name}}</div>
 <app-profile-settings 
+    (validateAction)="onValidation($event)" 
     (loadingAction)="onLoad($event)" 
     [parentForm]="form" 
-    [initialValue]="mock.settings">
+    [initialValue]="(profileStore.state$ | async).settings">
 </app-profile-settings>
-<button (click)="onValidation()">Valider</button><br />

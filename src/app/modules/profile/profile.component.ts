@@ -1,5 +1,5 @@
 import { ProfileSettingsState } from './profile.state';
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ProfileStore } from './profile.store';
 
@@ -21,8 +21,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    public profileStore: ProfileStore,
-    public cd: ChangeDetectorRef) { }
+    public profileStore: ProfileStore) { }
 
   ngOnInit() {
     if (this.form === undefined) {
@@ -44,16 +43,16 @@ export class ProfileComponent implements OnInit {
   }
 
   onValidation() {
-    const formValueThemeColor = this.form.get('settings.themeColor').value;
-    const formValuePrivateProfile = this.form.get('settings.privateProfile').value;
-    this.mock = {
-      ...this.mock,
-      settings: {
-        ...this.mock.settings,
-        privateProfile: formValuePrivateProfile,
-        themeColor: formValueThemeColor
-      }
-    };
+    // const formValueThemeColor = this.form.get('settings.themeColor').value;
+    // const formValuePrivateProfile = this.form.get('settings.privateProfile').value;
+    // this.mock = {
+    //   ...this.mock,
+    //   settings: {
+    //     ...this.mock.settings,
+    //     privateProfile: formValuePrivateProfile,
+    //     themeColor: formValueThemeColor
+    //   }
+    // };
     console.log('appel du web service de modification', this.profileStore.state);
   }
 
