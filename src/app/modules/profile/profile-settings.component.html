@@ -6,7 +6,7 @@
         <label>couleur du thème :</label>
         <input formControlName="themeColor" /><br />
     </div>
-    <div>Profil privé : {{initialValue.privateProfile}}</div>
-    <div>Couleur du thème : {{initialValue.themeColor}}</div>
+    <div>Profil privé : {{initialValue?.privateProfile}}</div>
+    <div>Couleur du thème : {{initialValue?.themeColor}}</div>
     <button (click)="onValidate()">Valider</button><br />
 </div>

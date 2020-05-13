@@ -1,3 +1,4 @@
+import { StoreService } from './../../core/store.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ProfileStore } from './profile.store';
@@ -20,7 +21,8 @@ export class ProfileComponent implements OnInit {
   };
 
   constructor(
-    public fb: FormBuilder) { }
+    public fb: FormBuilder,
+    public profileStore: ProfileStore) { }
 
   ngOnInit() {
     if (this.form === undefined) {
@@ -29,14 +31,15 @@ export class ProfileComponent implements OnInit {
     this.form.valueChanges
       .subscribe(data => {
         if (data) {
-          console.log(data);
+          this.profileStore.dispatch(data);
         }
       });
   }
 
   onValidation(settingsValues) {
-    const {themeColor, privateProfile} = settingsValues;
-    this.data.settings.themeColor = themeColor;
-    this.data.settings.privateProfile = privateProfile;
+    // const {themeColor, privateProfile} = settingsValues;
+    // this.data.settings.themeColor = themeColor;
+    // this.data.settings.privateProfile = privateProfile;
+    console.log('appel du web service de modification', this.profileStore.state);
   }
 }

@@ -44,3 +44,10 @@ On met en place la mécanique qui permet de rattacher le store au formulaire.
 Au terme de cette étape, on sera capable d'afficher la valeur courante qui est dans le store. 
 
 --------------------------
+
+7/ Action de mise à jour du formulaire
+Suite au clic sur un bouton d'action, on souhaite charger un profil.
+Concrétement, les données du formulaire devront être modifiées au même titre que le store. 
+
+--------------------------
+
