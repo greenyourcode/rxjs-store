@@ -9,6 +9,7 @@ export class ProfileComponent implements OnInit {
 
   data = {
     name: 'toto',
+    id: '1',
     settings: {
       privateProfile: false,
       themeColor: 'blue'
