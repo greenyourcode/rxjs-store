@@ -1,3 +1,4 @@
+import { ProfileSettingsState } from './profile.state';
 import { StoreService } from './../../core/store.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -34,6 +35,13 @@ export class ProfileComponent implements OnInit {
           this.profileStore.dispatch(data);
         }
       });
+  }
+
+  onLoad(settings: ProfileSettingsState) {
+    this.profileStore.setState({
+      ...this.profileStore.state,
+      settings
+    });
   }
 
   onValidation(settingsValues) {

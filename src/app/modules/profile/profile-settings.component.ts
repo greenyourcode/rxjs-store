@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -6,10 +6,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   templateUrl: './profile-settings.component.html',
   styleUrls: ['./profile-settings.component.scss']
 })
-export class ProfileSettingsComponent implements OnInit {
+export class ProfileSettingsComponent implements OnInit, OnChanges {
   @Input() initialValue: any;
   @Input() parentForm: FormGroup;
   @Output() validateAction = new EventEmitter();
+  @Output() loadingAction = new EventEmitter();
   form: FormGroup;
 
   constructor(private fb: FormBuilder) { }
@@ -26,9 +27,38 @@ export class ProfileSettingsComponent implements OnInit {
     }
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    const { initialValue } = changes;
+    if (initialValue.currentValue) {
+      if (this.form && changes.initialValue.previousValue !== changes.initialValue.currentValue) {
+        this.form.setValue(changes.initialValue.currentValue);
+      }
+      if (initialValue.previousValue) {
+        if (initialValue.previousValue.themeColor !== initialValue.currentValue.themeColor) {
+          this.form.patchValue({
+            themeColor: initialValue.currentValue.themeColor
+          });
+        }
+        if (initialValue.previousValue.privateProfile !== initialValue.currentValue.privateProfile) {
+          this.form.patchValue({
+            privateProfile: initialValue.currentValue.privateProfile
+          });
+        }
+      }
+    }
+  }
+
+  onLoading() {
+    this.loadingAction.emit({
+      ...this.initialValue,
+      themeColor: 'red',
+      privateProfile: 'true'
+    });
+  }
+
   onValidate() {
     const formValueThemeColor = this.form.get('themeColor').value;
     const formValuePrivateProfile = this.form.get('privateProfile').value;
-    this.validateAction.emit({themeColor: formValueThemeColor, privateProfile: formValuePrivateProfile});
+    this.validateAction.emit({ themeColor: formValueThemeColor, privateProfile: formValuePrivateProfile });
   }
 }
