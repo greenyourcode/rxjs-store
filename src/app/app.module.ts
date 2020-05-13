@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { CustomersComponent } from './modules/customers/customers.component';
+import { ProfileSettingsComponent } from './modules/profile/profile-settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    CustomersComponent
+    CustomersComponent,
+    ProfileSettingsComponent
   ],
   imports: [
     ReactiveFormsModule,
