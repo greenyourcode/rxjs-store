@@ -50,5 +50,8 @@ Suite au clic sur un bouton d'action, on souhaite charger un profil.
 Concrétement, les données du formulaire devront être modifiées au même titre que le store. 
 
 --------------------------
+ENDING : 
 
-8/ Trouver les bugs s'il y a et refactactoriser !
+10/ Trouver les bugs s'il y a et refactactoriser !
+
+11/ Enjoy
