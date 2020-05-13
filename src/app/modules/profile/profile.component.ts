@@ -46,8 +46,15 @@ export class ProfileComponent implements OnInit {
   onValidation() {
     const formValueThemeColor = this.form.get('settings.themeColor').value;
     const formValuePrivateProfile = this.form.get('settings.privateProfile').value;
-    this.mock.settings.themeColor = formValueThemeColor;
-    this.mock.settings.privateProfile = formValuePrivateProfile;
+    this.mock = {
+      ...this.mock,
+      settings: {
+        ...this.mock.settings,
+        privateProfile: formValuePrivateProfile,
+        themeColor: formValueThemeColor
+      }
+    };
     console.log('appel du web service de modification', this.profileStore.state);
   }
+
 }
