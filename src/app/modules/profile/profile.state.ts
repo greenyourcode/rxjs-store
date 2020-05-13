@@ -3,7 +3,7 @@ export class ProfileState {
   id: string;
 }
 
-export class ProfileSettings {
+export class ProfileSettingsState {
   privateProfile: string;
   themeColor: string;
 }
