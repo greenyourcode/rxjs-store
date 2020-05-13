@@ -1,4 +1,4 @@
 <h2>Module profil</h2>
 <div>ID : {{data.id}}</div>
 <div>Nom : {{data.name}}</div>
-<app-profile-settings (validateAction)="onValidation($event)" [initialValue]="data.settings"></app-profile-settings>
+<app-profile-settings (validateAction)="onValidation($event)" [parentForm]="form" [initialValue]="data.settings"></app-profile-settings>

@@ -26,10 +26,16 @@ export class ProfileComponent implements OnInit {
     if (this.form === undefined) {
       this.form = this.fb.group({});
     }
+    this.form.valueChanges
+      .subscribe(data => {
+        if (data) {
+          console.log(data);
+        }
+      });
   }
 
-  onValidation(profileValues) {
-    const {themeColor, privateProfile} = profileValues;
+  onValidation(settingsValues) {
+    const {themeColor, privateProfile} = settingsValues;
     this.data.settings.themeColor = themeColor;
     this.data.settings.privateProfile = privateProfile;
   }

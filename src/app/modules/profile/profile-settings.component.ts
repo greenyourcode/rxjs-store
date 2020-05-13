@@ -22,7 +22,7 @@ export class ProfileSettingsComponent implements OnInit {
       });
     }
     if (this.parentForm) {
-      this.parentForm.addControl('details', this.form);
+      this.parentForm.addControl('settings', this.form);
     }
   }
 
