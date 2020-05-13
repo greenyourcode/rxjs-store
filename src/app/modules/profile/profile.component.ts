@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  data = {
+    name: 'toto',
+    settings: {
+      privateProfile: false,
+      themeColor: 'blue'
+    }
+  };
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }
