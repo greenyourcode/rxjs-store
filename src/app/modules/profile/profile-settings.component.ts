@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-settings',
   templateUrl: './profile-settings.component.html',
-  styleUrls: ['./profile-settings.component.scss']
+  styleUrls: ['./profile-settings.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfileSettingsComponent implements OnInit, OnChanges {
   @Input() initialValue: any;
@@ -54,11 +55,5 @@ export class ProfileSettingsComponent implements OnInit, OnChanges {
       themeColor: 'red',
       privateProfile: 'true'
     });
-  }
-
-  onValidate() {
-    const formValueThemeColor = this.form.get('themeColor').value;
-    const formValuePrivateProfile = this.form.get('privateProfile').value;
-    this.validateAction.emit({ themeColor: formValueThemeColor, privateProfile: formValuePrivateProfile });
   }
 }

@@ -55,3 +55,7 @@ Concrétement, les données du formulaire devront être modifiées au même titr
 Pourquoi le themeColor initialisé à green dans le state n'est pas pris en compte à l'initialisation de l'application ? 
 
 --------------------------
+
+9/ Bug
+Après validation des nouvelles données du formulaire, la vue ne se met pas à jour. 
+Résoudre l'erreur et expliquez pour les raisons du dysfonctionnement. 
