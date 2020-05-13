@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class ProfileSettingsComponent implements OnInit {
   @Input() initialValue: any;
   @Input() parentForm: FormGroup;
+  @Output() validateAction = new EventEmitter();
   form: FormGroup;
 
   constructor(private fb: FormBuilder) { }
@@ -25,4 +26,9 @@ export class ProfileSettingsComponent implements OnInit {
     }
   }
 
+  onValidate() {
+    const formValueThemeColor = this.form.get('themeColor').value;
+    const formValuePrivateProfile = this.form.get('privateProfile').value;
+    this.validateAction.emit({themeColor: formValueThemeColor, privateProfile: formValuePrivateProfile});
+  }
 }

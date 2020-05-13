@@ -23,3 +23,11 @@ Utiliser un Reactive form pour réaliser cet exercice.
 Ajouter un bouton de validation. 
 Au clic, on souhaite que les informations saisies soient mises à jour dans le modèle. 
 Les nouvelles informations doivent être répercutées dans la vue. 
+
+--------------------------
+
+4/ Mise en place et design du store
+On souhaite désormais conserver les informations lors du passage d'un module à l'autre. De même, on aimerait afficher la couleur du thème dans le module customer. 
+Pour ce faire, designer le state, l'écrire et initialiser le store. 
+
+--------------------------
