@@ -1,3 +1,5 @@
+Angular store in rxjs way.
+
 Projet : 
 --------
 
